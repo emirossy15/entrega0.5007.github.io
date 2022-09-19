@@ -27,7 +27,11 @@ nav a {
     font-size: 3.5rem;
   }
 }
+.usuario{
+  color: rgba(255,255,255,.55)
 
+
+}
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
