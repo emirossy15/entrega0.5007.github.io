@@ -192,3 +192,9 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.related-products{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

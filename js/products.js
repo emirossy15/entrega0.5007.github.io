@@ -24,7 +24,7 @@ function showProductsList(){
         ((searchString == undefined) || (searchString.length > 0 && false))
         ){
             htmlContentToAppend += `
-            <div class="list-group-item list-group-item-action">
+            <div class="list-group-item list-group-item-action" onclick="save_id(` +product.id +`)" id="` +product.id +`">
                 <div class="row">
                     <div class="col-3">
                         <img src="` + product.image + `" alt="product image" class="img-thumbnail">
@@ -48,6 +48,16 @@ function showProductsList(){
         
     }
 }
+function save_id(id){
+    localStorage.setItem("product_id", id);
+    window.location.href="../product-info.html";
+    
+
+
+}
+
+
+
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -154,6 +164,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
 
         showProductsList();
+    });
+
+    document.getElementsByClassName("list-group-item").addEventListener("click", function(){
+        console.log("la id es ",this.id);
     });
 
 });
