@@ -1,4 +1,4 @@
-let productCost = 0;
+ let productCost = 0;
 let productCount = 0;
 let comissionPercentage = 0.13;
 let MONEY_SYMBOL = "$";
