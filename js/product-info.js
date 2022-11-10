@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                     let relProd = product.relatedProducts[i];
                     let relProdHtml = `
                     <div class="card" onclick="redirectToProduct(${relProd.id})"  style="cursor:pointer;width: 13rem;height: 13rem;">
-                        <img class="card-img-top" src="../${relProd.image}" alt="Card image cap">
+                        <img class="card-img-top" src="${relProd.image}" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">${relProd.name}</h5>
                         </div>
