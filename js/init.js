@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   
   
 
-function showNavbar (){
-  document.getElementById("navbar").innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
+function showNavbar() {
+  document.getElementsByClassName("navbar").innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="home.html">Inicio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -107,11 +107,8 @@ function logout(){
   window.location ="index.html";
   
   return false
-  
-  } 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+} 
+
 document.addEventListener("DOMContentLoaded", function(e){
   showNavbar();
 });
