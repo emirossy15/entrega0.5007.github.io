@@ -54,15 +54,13 @@ function redirectToProduct(id){
 }
 
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+
 document.addEventListener("DOMContentLoaded", function(e){
 
-    let product_id=  localStorage.getItem("product_id");
+    let product_id= localStorage.getItem("product_id");
     if(product_id){
         console.log("entro")
-        getJSONData(PRODUCT_INFO_URL + product_id.toString() + ".json").then(function(resultObj){
+        getJSONData(PRODUCT_INFO_URL + product_id + ".json").then(function(resultObj){
             if (resultObj.status === "ok")
             {
                 product = resultObj.data;
@@ -79,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
                 for(let i = 0; i < product.images.length; i++ ){
                     let imageUrl = product.images[i];
-                    let imghtml = `<img src="../${imageUrl.toString()}" width="96px" height="158px"/>`;
+                    let imghtml = `<img src="../${imageUrl}" width="96px" height="158px"/>`;
                     let productImagesGallery = document.getElementById("productImagesGallery");
                     productImagesGallery.innerHTML += imghtml;
                 }
@@ -102,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
         });
         
-        getJSONData(PRODUCT_INFO_COMMENTS_URL + product_id.toString() + ".json").then(function(resultObj){
+        getJSONData(PRODUCT_INFO_COMMENTS_URL + product_id + ".json").then(function(resultObj){
             if (resultObj.status === "ok")
             {
                 comments = resultObj.data;
