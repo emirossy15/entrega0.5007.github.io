@@ -166,8 +166,5 @@ document.addEventListener("DOMContentLoaded", function(e){
         showProductsList();
     });
 
-    document.getElementsByClassName("list-group-item list-group-item-action").addEventListener("click", function(){
-        console.log("la id es ", id);
-    });
-
+ 
 });
