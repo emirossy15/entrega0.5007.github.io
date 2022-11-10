@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
                 for(let i = 0; i < product.images.length; i++ ){
                     let imageUrl = product.images[i];
-                    let imghtml = `<img src="../${imageUrl}" width="96px" height="158px"/>`;
+                    let imghtml = `<img src="${imageUrl}" width="96px" height="158px"/>`;
                     let productImagesGallery = document.getElementById("productImagesGallery");
                     productImagesGallery.innerHTML += imghtml;
                 }
