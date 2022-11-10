@@ -50,7 +50,7 @@ function addComment(){
 
 function redirectToProduct(id){
     localStorage.setItem("product_id", id);
-    window.location.href="../product-info.html";
+    window.location.href="./product-info.html";
 }
 
 
