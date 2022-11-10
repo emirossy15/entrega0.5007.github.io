@@ -50,7 +50,7 @@ function showProductsList(){
 }
 function save_id(id){
     localStorage.setItem("product_id", id);
-    window.location.href="./product-info.html";
+    window.location.href="../product-info.html";
     
 
 
@@ -166,8 +166,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         showProductsList();
     });
 
-    document.getElementsByClassName("list-group-item").addEventListener("click", function(){
-        console.log("la id es ",this.id);
+    document.getElementsByClassName("list-group-item list-group-item-action").addEventListener("click", function(){
+        console.log("la id es ", id);
     });
 
 });
