@@ -50,7 +50,7 @@ function showProductsList(){
 }
 function save_id(id){
     localStorage.setItem("product_id", id);
-    window.location.href="../product-info.html";
+    window.location.href="./product-info.html";
     
 
 
