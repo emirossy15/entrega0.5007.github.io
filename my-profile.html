@@ -32,45 +32,146 @@
   </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="paginicio.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item usuario"> 
-            <div class="dropdown show">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userEmail" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
-              </a>
-            
-              <div class="dropdown-menu" aria-labelledby="userEmail">
-                <a class="dropdown-item" href="./cart.html">Mi carrito</a>
-                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-                <a class="dropdown-item" onclick="logout()" >Cerrar sesión</a>
+  <main>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link active" href="paginicio.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item usuario"> 
+              <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userEmail" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown link
+                </a>
+              
+                <div class="dropdown-menu" aria-labelledby="userEmail">
+                  <a class="dropdown-item" href="./cart.html">Mi carrito</a>
+                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                  <a class="dropdown-item" onclick="logout()" >Cerrar sesión</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container p-3">
+      <h2 class="text-center">Mi perfil</h2>
+      <div class="mx-auto row border bg-light shadow p-3 mb-4 bg-white">
+        <div class="col-lg-4 mt-2 mb-2 mx-auto d-flex align-items-center">
+          <img src="" alt="" class=" mx-auto d-block img-fluid rounded-circle w-75" id="profileImage">
+        </div>
+        <div class="mx-auto col-lg-8">
+          <table class="table  mx-auto mt-3 align-items-center">
+            <tr>
+              <td class="text-left">Primer nombre</td>
+              <td class="text-left pl-15" id="name"></td>
+            </tr>
+            <tr>
+              <td class="text-left">Segundo nombre</td>
+              <td class="text-left pl-15" id="secondname"></td>
+            </tr>
+            <tr>
+              <td class="text-left ">Apellido</td>
+              <td class="text-left pl-15" id="lastname"></td>
+            </tr>
+            <tr>
+              <td class="text-left">Segundo apellido</td>
+              <td class="text-left pl-15" id="secondlastname"></td>
+            </tr>
+            <tr>
+              <td class="text-left">Email</td>
+              <td class="text-left pl-15" id="elEmail"></td>
+            </tr>
+            <tr>
+              <td class="text-left">Telefono</td>
+              <td class="text-left pl-15" id="telephone"></td>
+            </tr>
+          </table>
+          
+          
+        </div>
+        
+      </div>
+  
+  <div class="mx-auto text-center mb-2" id="ifNotUser">
+   
+  </div>
+  
+  
+          <!-- Boton que abre el modal -->
+          <div class="mx-auto w-50">
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#changeProfile" id="buttonModal">
+              Modificar Perfil
+            </button>
+            </div>
+          <!-- Modal -->
+          
+                  <form id="profileData">
+                    <div class="modal fade" id="changeProfile" tabindex="-1" aria-labelledby="changeProfileLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="changeProfileLabel">Modificar Perfil</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="insertName" placeholder="Ingresa tu primer nombre" name="nombre" class="form-control" required>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="lastName">Segundo Nombre:</label>
+                            <input type="text" id="insertSecondName" placeholder="Ingresa tu segundo nombre" name="segundoNombre" class="form-control" >
+                        </div>
+                        <div class="col-12 col-lg-6">
+                          <label for="name">Apellido:</label>
+                          <input type="text" id="insertLastName" placeholder="Ingresa tu primer apellido" name="apellido" class="form-control" required>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <label for="name">Segundo Apellido:</label>
+                        <input type="text" id="insertSecondLastName" placeholder="Ingresa tu segundo apellido" name="segundoApellido" class="form-control" >
+                    </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 col-lg-6">
+                          <label for="email">Email:</label>
+                          <input type="email" id="insertEmail" placeholder="Ingresa tu email" name="email" class="form-control" required >
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col-12 col-lg-6">
+                        <label for="telephone">Teléfono</label>
+                        <input type="number" id="insertTelephone" placeholder="Ingresa tu teléfono" name="telefono" class="form-control" >
+                      </div>
+                    </div>
+                    
+                </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-primary" id="saveProfile">Guardar</button>
+                </div>
               </div>
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+          </div>
+       
+          
     </div>
   </main>
   <footer class="text-muted">

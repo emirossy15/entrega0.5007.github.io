@@ -105,6 +105,7 @@ function showNavbar() {
 function logout(){ 
   localStorage.removeItem("email", undefined);
   window.location ="index.html";
+  localStorage.removeItem("profile", undefined)
   
   return false
 } 
